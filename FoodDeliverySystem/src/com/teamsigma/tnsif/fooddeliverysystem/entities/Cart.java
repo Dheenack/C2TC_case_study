@@ -1,10 +1,11 @@
 package com.teamsigma.tnsif.fooddeliverysystem.entities;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Cart {
 		
-	private Map<FoodItem,Integer> items;
+	private Map<FoodItem,Integer> items=new HashMap<FoodItem, Integer>();
 	
 	public Cart() {}
 	
@@ -22,7 +23,7 @@ public class Cart {
 
 	@Override
 	public String toString() {
-		return "Cart [items=" + items + "]";
+		return "Cart: [items=" + items + "]";
 	}
 	
 	

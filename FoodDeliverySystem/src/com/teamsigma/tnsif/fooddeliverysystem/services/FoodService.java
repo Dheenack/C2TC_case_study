@@ -1,4 +1,4 @@
-package com.teamsigma.tnsif.fooddeliverysystem.services;
+ package com.teamsigma.tnsif.fooddeliverysystem.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +26,9 @@ public class FoodService {
 		return allFoodItems;
 	}
 	
-	public FoodItem findFoodById(int FoodId) {
+	public FoodItem findFoodById(int FoodId,int resId) {
 		FoodItem fi = null;
-		for(FoodItem f:getAllFoodItems()) {
+		for(FoodItem f:findRestaurentById(resId).getMenu()) {
 			if(f.getId()==FoodId) {
 				fi=f;
 			}
@@ -46,7 +46,7 @@ public class FoodService {
 	}
 	
 	public void addFoodItemToRestaurant(int restaurantId, int foodItemId) {
-		FoodItem fi = findFoodById(foodItemId);
+		FoodItem fi = findFoodById(foodItemId,restaurantId);
 		for(Restaurant r:restaurants) {
 			if(r.getId()==restaurantId) {
 				r.addFoodItem(fi);
@@ -54,11 +54,20 @@ public class FoodService {
 		}
 	} 
 	public void removeFoodItemFromRestaurant(int restaurantId,int foodItemId) {
-		FoodItem fi =findFoodById(foodItemId);
+		FoodItem fi =findFoodById(foodItemId,restaurantId);
 		for(Restaurant r:restaurants) {
 			if(r.getId()==restaurantId) {
 				r.removeFoodItem(fi);
 			}
 		}
 	}
+    public void viewRestaurantsAndMenus() {
+        if (restaurants.isEmpty()) {
+            System.out.println("No restaurants available.");
+            return;
+        }
+        for (Restaurant r : restaurants) {
+            System.out.println(r);
+        }
+    }
 }

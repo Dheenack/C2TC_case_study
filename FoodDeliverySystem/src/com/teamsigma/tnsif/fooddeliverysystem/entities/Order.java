@@ -54,7 +54,7 @@ public class Order {
 	@Override
 	public String toString() {
 		return "Order [orderId=" + orderId + ", customer=" + customer + ", items=" + items + ", status=" + status
-				+ ", deliveryPerson=" + deliveryPerson + ", deliveryAddress=" + deliveryAddress + "]";
+				+ ", deliveryPerson=" + deliveryPerson + "]";
 	}
 	
 	public void addItem(FoodItem fi, int id	) {

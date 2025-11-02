@@ -1,11 +1,12 @@
 package com.teamsigma.tnsif.fooddeliverysystem.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant {
 	private int Id;
 	private String name;
-	private List<FoodItem> menu;
+	private List<FoodItem> menu=new ArrayList<>();
 	
 	public Restaurant(int id, String name) {
 		super();
@@ -27,7 +28,8 @@ public class Restaurant {
 
 	@Override
 	public String toString() {
-		return "Restaurant [Id=" + Id + ", name=" + name + ", menu=" + menu + "]";
+		return "Restaurant ID:"+Id+ ", Name:"+name
+				+"\n" + menu;
 	}
 	
 	public void addFoodItem(FoodItem fi) {

@@ -3,13 +3,13 @@ package com.teamsigma.tnsif.fooddeliverysystem.entities;
 public class FoodItem {
 	
 	private int Id;
-	private int name;
+	private String name;
 	private int price;
 	
-	public FoodItem(int id, int name, int price) {
+	public FoodItem(int id, String fname, int price) {
 		super();
 		Id = id;
-		this.name = name;
+		this.name = fname;
 		this.price = price;
 	}
 
@@ -21,11 +21,11 @@ public class FoodItem {
 		Id = id;
 	}
 
-	public int getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -39,7 +39,7 @@ public class FoodItem {
 
 	@Override
 	public String toString() {
-		return "FoodItem [Id=" + Id + ", name=" + name + ", price=" + price + "]";
+		return "- Food Item Id=" + Id + ", name=" + name + ", price=" + price + "\n";
 	}
 	
 }
